@@ -195,6 +195,6 @@ tree.insertNode(20); //right of the '15' node
 //tree.findNode(21); //should return false
 //tree.findNode(3); //should return true
 //tree.BFS(); //returns all the nodes based off a breadth first search
-tree.DFSPreOrder(); //Uses Depth First Search Pre-Order
-tree.DFSPostOrder(); //Uses Depth First Search Post-Order
-tree.DFSInOrder(); // Use Depth First Search In-Order
+//tree.DFSPreOrder(); //Uses Depth First Search Pre-Order
+//tree.DFSPostOrder(); //Uses Depth First Search Post-Order
+///tree.DFSInOrder(); // Use Depth First Search In-Order

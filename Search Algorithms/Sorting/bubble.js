@@ -16,6 +16,7 @@ function bubbleSort(arr) {
     }
     if (noSwap) break; //Optimizing to stop looping if no swapping has occurred
   }
+  console.log("sorted arr", arr);
   return arr;
 }
 

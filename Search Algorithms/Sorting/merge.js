@@ -6,20 +6,6 @@ Big-O - O(n log n)
 Space Complexity - 0(n)
 */
 
-//this splits up the array into multiple sorted arrays
-const mergeSort = (arr) => {
-  //base case that determines when we'll stop splitting the array
-  if (arr.length <= 1) return arr;
-  //we want to get the mid point of the array
-  let mid = Math.floor(arr.length / 2);
-  //we slice the array in the middle using the mid point to create the 'left array' using recursion
-  let left = splitArray(arr.slice(0, mid));
-  //we do the same thing for the right side
-  let right = splitArray(arr.slice(mid));
-  //once we have split the arrays down to individual element arrays we merge them using the mergeSort function below
-  merge(left, right);
-};
-
 //this creates the merged array
 const merge = (arrOne, arrTwo) => {
   let results = []; //we will result a new sorted array
@@ -47,8 +33,22 @@ const merge = (arrOne, arrTwo) => {
     results.push(arrTwo[j]);
     j++;
   }
-  console.log("results are " + results);
+  console.log("results are ", results);
   return results;
+};
+
+//this splits up the array into multiple sorted arrays
+const mergeSort = (arr) => {
+  //base case that determines when we'll stop splitting the array
+  if (arr.length <= 1) return arr;
+  //we want to get the mid point of the array
+  let mid = Math.floor(arr.length / 2);
+  //we slice the array in the middle using the mid point to create the 'left array' using recursion
+  let left = mergeSort(arr.slice(0, mid));
+  //we do the same thing for the right side
+  let right = mergeSort(arr.slice(mid));
+  //once we have split the arrays down to individual element arrays we merge them using the mergeSort function below
+  return merge(left, right);
 };
 
 mergeSort([1, 4, 5, 500, 600, 1000, 90000, 10, 20, 33, 100, 150]);

@@ -14,11 +14,11 @@ const pivot = (arr, start = 0, end = arr.length + 1) => {
     if (pivotPoint > arr[i]) {
       //we know that this element is less than the pivot point so we need to make room for a swap
       swapIndex++;
-      swapIndex(arr, swapIndex, i);
+      swapValues(arr, swapIndex, i);
     }
   }
   //once we've looped through we need to do one final swap with the starting index and the last known swapIndex
-  swap(arr, start, swapIndex);
+  swapValues(arr, start, swapIndex);
   //return the swapIndex so we can find the
   return swapIndex;
 };
@@ -43,3 +43,14 @@ const quickSort = (arr, left = 0, right = arr.length - 1) => {
 };
 
 quickSort([100, 30, 40, 22, 1, 12, 35]);
+quickSort([10, 9.9, 9.7, 12.0, 11.8, 11.7, 14.0, 13.8, 13.7]);
+
+// 10.0,10.0
+// 9.9,12.0
+// 9.7,14.0
+// 12.0,10.1
+// 11.8,12.1
+// 11.7,14.1
+// 14.0,10.3
+// 13.8,12.3
+// 13.7,14.3
